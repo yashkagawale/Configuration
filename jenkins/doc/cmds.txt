@@ -1,0 +1,10 @@
+docker-compose up --build -d
+docker exec -it jenkins /bin/bash  
+cat /var/jenkins_home/secrets/initialAdminPassword
+
+
+initital passwword jenkn_home
+
+
+
+custome docker image direcotry : jenkins_homw/worksspace//dockrrtest

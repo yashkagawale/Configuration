@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  terraform:
+    image: hashicorp/terraform:latest
+    container_name: terraform
+    volumes:
+      - D:/DEVOPS/terraform:/workspace  # Adjust this path based on your local directory
+      - /var/run/docker.sock:/var/run/docker.sock  # This allows Terraform to interact with Docker
+    working_dir: /workspace
+    entrypoint: ["terraform"]
+    command: ["init"]  # Default command (can be overridden)

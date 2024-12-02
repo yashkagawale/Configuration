@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  jenkins:
+    build: 
+      context: ./jenkins  # This is where your Jenkins-specific Dockerfile is located
+      dockerfile: Dockerfile  # This references the Dockerfile inside the jenkins folder
+    privileged: true
+    user: root
+    ports:
+      - "8083:8080"
+      - "50000:50000"
+    container_name: jenkins
+    volumes:
+      - D:/DEVOPS/jenkins/doc/jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - jenkins-net
+
+networks:
+  jenkins-net:
+    driver: bridge
+
+volumes:
+  jenkins_home:

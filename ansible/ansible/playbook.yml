@@ -1,0 +1,17 @@
+# ansible/playbook.yml
+---
+- name: Install Apache and ensure it is running
+  hosts: apache-server
+  become: true
+  tasks:
+    - name: Install Apache
+      apt:
+        name: apache2
+        state: present
+        update_cache: yes
+
+    - name: Start Apache service
+      service:
+        name: apache2
+        state: started
+        enabled: yes

@@ -1,0 +1,6 @@
+[apache-server]
+apache-server ansible_host=apache-server ansible_port=22
+
+[apache-server:vars]
+ansible_ssh_user=root
+ansible_ssh_pass=password

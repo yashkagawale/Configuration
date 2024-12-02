@@ -1,0 +1,11 @@
+# Use the official Nginx image from Docker Hub
+FROM nginx:alpine
+
+# Copy the HTML file into the container's web server directory
+COPY index.html /usr/share/nginx/html/index.html
+
+# Expose port 8086 to the host
+EXPOSE 8086
+
+# Start Nginx server
+CMD ["nginx", "-g", "daemon off;"]

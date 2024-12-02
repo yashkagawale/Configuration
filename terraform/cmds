@@ -1,0 +1,25 @@
+docker-compose run terraform init
+docker-compose run terraform plan
+docker-compose run terraform apply -auto-approve
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+docker pull hashicorp/terraform
+docker run --rm   -v /var/run/docker.sock:/var/run/docker.sock   -v D:/DEVOPS/terraform:/workspace  -w /workspace   hashicorp/terraform init
+docker run --rm   -v /var/run/docker.sock:/var/run/docker.sock   -v D:/DEVOPS/terraform:/workspace  -w /workspace   hashicorp/terraform plan
+docker run --rm   -v /var/run/docker.sock:/var/run/docker.sock   -v D:/DEVOPS/terraform:/workspace  -w /workspace   hashicorp/terraform apply -auto-approve
+
+

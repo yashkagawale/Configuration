@@ -1,0 +1,4 @@
+docker pull jenkins/jenkins:lts
+docker run -d --name jenkins-container -p 8081:8080 -p 50000:50000 -v D:/DEVOPS/jenkins/jenkinshome:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock --privileged jenkins/jenkins:lts
+docker exec -it jenkins-container /bin/bash
+cat /var/jenkins_home/secrets/initialAdminPassword
